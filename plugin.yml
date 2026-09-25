@@ -4,7 +4,7 @@ version: 1.0.0
 api: ["5.0.0"]
 author: ApexMine
 description: Per-world rules, time lock, forced gamemode, always-spawn and world management with a clean form UI (English & Persian)
-website: https://github.com/ApexMine/WorldControl
+website: https://github.com/mohammad-8056/WorldControl
 
 permissions:
   worldcontrol.command:

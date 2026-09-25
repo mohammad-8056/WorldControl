@@ -21,7 +21,7 @@
 
 ## نصب
 
-1. فایل `WorldControl.phar` را از بخش [Releases](https://github.com/ApexMine/WorldControl/releases) دانلود کنید و در پوشه `plugins/` سرور بگذارید.
+1. فایل `WorldControl.phar` را از بخش [Releases](https://github.com/mohammad-8056/WorldControl/releases) دانلود کنید و در پوشه `plugins/` سرور بگذارید.
 2. سرور را روشن کنید. تمام! با `/wc` پنل باز می‌شود.
 
 زبان پیش‌فرض را در `plugin_data/WorldControl/config.yml` با `language: fa` فارسی کنید. بازیکن‌هایی که زبان بازی‌شان فارسی
@@ -218,7 +218,7 @@ shaped and shown right-to-left with [libPersianText](https://github.com/ApexMine
 
 ### Install
 
-Download `WorldControl.phar` from [Releases](https://github.com/ApexMine/WorldControl/releases), put it in `plugins/`
+Download `WorldControl.phar` from [Releases](https://github.com/mohammad-8056/WorldControl/releases), put it in `plugins/`
 and start the server. `/wc` opens the panel. No dependencies.
 
 Every player gets their own language: picked with `/wc lang`, otherwise detected from their game language, otherwise
