@@ -1,0 +1,391 @@
+# WorldControl - فارسی
+#
+# این متن‌ها داخل بازی خودکار با libPersianText شکل‌دهی و راست‌به‌چپ می‌شوند.
+# نکته‌ها برای ویرایش:
+#  - از نیم‌فاصله استفاده کنید (می‌شود)؛ در بازی دیده نمی‌شود ولی حروف را درست جدا می‌کند.
+#  - از ی و ک فارسی و رقم انگلیسی استفاده کنید. به جای ٪ بنویسید «درصد».
+#  - {placeholder} ها را تغییر ندهید. {prefix} همان پیشوند پایین است.
+#  - اولین کلمه هر خط سمت راست نمایش داده می‌شود؛ برای همین در راهنما اول توضیح آمده و بعد دستور.
+
+language:
+  name: "فارسی"
+
+prefix: "§8[§bWorld§3Control§8]§r "
+
+general:
+  players-only: "{prefix}§cاین کار فقط داخل بازی ممکن است."
+  no-permission: "{prefix}§cشما اجازه این کار را ندارید."
+  player-help: "{prefix}§7برای تغییر زبان بزنید §e/wc lang"
+  unknown-subcommand: "{prefix}§cدستور §e{sub} §cوجود ندارد. راهنما: §e/wc help"
+  usage: "{prefix}§cطریقه استفاده: {usage}"
+  defaults-name: "قوانین پیش‌فرض"
+  player-not-found: "{prefix}§cبازیکن §e{player} §cآنلاین نیست."
+  reloaded: "{prefix}§aکانفیگ، زبان‌ها، worlds.yml و server.yml دوباره خوانده شدند."
+
+help:
+  header: "§8------ §bWorld§3Control §8------"
+  line: "§8» {usage}"
+  footer: "§7به جای World اسم ورلد، §fhere §7یا §fdefault §7(همه ورلدها) بنویسید."
+  help: "§7همین راهنما §8: §e/wc help"
+  ui: "§7باز کردن پنل §8: §e/wc"
+  world: "§7پنل یک ورلد §8: §e/wc world World"
+  info: "§7دیدن قوانین یک ورلد §8: §e/wc info World"
+  set: "§7تغییر یک قانون §8: §e/wc set World Rule Value"
+  unset: "§7برگشت یک قانون به پیش‌فرض §8: §e/wc unset World Rule"
+  reset: "§7حذف همه تغییرات یک ورلد §8: §e/wc reset World"
+  time: "§7ثابت کردن تایم §8: §e/wc time World day/noon/night/off"
+  gamemode: "§7گیم‌مود اجباری §8: §e/wc gamemode World creative/off"
+  rules: "§7لیست همه قوانین §8: §e/wc rules"
+  alwaysspawn: "§7اسپاون در هر ورود §8: §e/wc alwaysspawn on/off/set"
+  setspawn: "§7اسپاون سرور همین‌جا §8: §e/wc setspawn"
+  setworldspawn: "§7اسپاون این ورلد همین‌جا §8: §e/wc setworldspawn"
+  tp: "§7تلپورت به ورلد §8: §e/wc tp World Player"
+  list: "§7لیست ورلدها §8: §e/wc list"
+  create: "§7ساخت ورلد §8: §e/wc create Name flat Seed"
+  load: "§7لود کردن ورلد §8: §e/wc load World"
+  unload: "§7آنلود کردن ورلد §8: §e/wc unload World"
+  builder: "§7حالت بیلدر (نادیده گرفتن قوانین) §8: §e/wc builder"
+  lang: "§7تغییر زبان §8: §e/wc lang fa/en"
+  reload: "§7خواندن دوباره فایل‌ها §8: §e/wc reload"
+
+rules:
+  header: "§8------ §bقوانین §8------"
+  category: "§3§l{category}"
+  line: "§8» §f{name} §8: §e{key} §8({values})"
+  values:
+    bool: "on / off"
+    gamemode: "survival, creative, adventure, spectator, off"
+    difficulty: "peaceful, easy, normal, hard, off"
+    time: "sunrise, day, noon, sunset, night, midnight, 0-23999, off"
+    number: "عدد، 0 یعنی خاموش"
+    text: "هر متنی، none یعنی خالی"
+    list: "با کاما جدا کنید، none یعنی خالی"
+
+info:
+  header: "§8------ §b{target} §8------"
+  line: "§8» §7{name}: §f{value}"
+  line-changed: "§8» §6* §7{name}: §f{value}"
+  footer: "§6* §7یعنی برای این ورلد تغییر کرده؛ بقیه از قوانین پیش‌فرض می‌آید."
+
+set:
+  unknown-rule: "{prefix}§cچنین قانونی وجود ندارد. لیست: §e{list}"
+  invalid-value: "{prefix}§cمقدار {value} برای §e{rule} §cدرست نیست. مقدارهای مجاز: §f{values}"
+  changed: "{prefix}§a{rule} §7در §b{target} §7شد §f{value}"
+  unset: "{prefix}§a{rule} §7در §b{world} §7دوباره از قوانین پیش‌فرض پیروی می‌کند."
+  reset: "{prefix}§b{world} §7دوباره از قوانین پیش‌فرض پیروی می‌کند."
+
+value:
+  "on": "§aروشن"
+  "off": "§cخاموش"
+  not-forced: "اجباری نیست"
+  time-free: "ثابت نیست"
+  time-ticks: "{ticks}"
+  time-preset: "{name} ({ticks})"
+  unlimited: "نامحدود"
+  blocks: "{count} بلاک"
+  empty: "-"
+
+gamemode:
+  survival: "سروایوال"
+  creative: "کریتیو"
+  adventure: "ادونچر"
+  spectator: "اسپکتیتور"
+
+difficulty:
+  peaceful: "صلح‌آمیز"
+  easy: "آسان"
+  normal: "معمولی"
+  hard: "سخت"
+
+time:
+  sunrise: "طلوع"
+  day: "روز"
+  noon: "ظهر"
+  sunset: "غروب"
+  night: "شب"
+  midnight: "نیمه‌شب"
+
+category:
+  build:
+    name: "ساخت‌وساز و ورلد"
+    desc: "کندن، گذاشتن، اینترکت، آتش، مایعات"
+  combat:
+    name: "مبارزه و دمیج"
+    desc: "پی‌وی‌پی، دمیج، دمیج سقوط، ووید"
+  player:
+    name: "بازیکن‌ها"
+    desc: "گرسنگی، آیتم‌ها، پرواز، چت"
+  mode:
+    name: "گیم‌مود و تایم"
+    desc: "گیم‌مود اجباری، سختی، قفل تایم"
+  access:
+    name: "دسترسی و مرز"
+    desc: "قفل، محدودیت بازیکن، مرز ورلد"
+  messages:
+    name: "پیام‌ها و دستورها"
+    desc: "تایتل خوش‌آمد، دستورهای ممنوع"
+
+rule:
+  break:
+    name: "کندن بلاک"
+    desc: "بازیکن‌ها می‌توانند بلاک بکنند"
+  place:
+    name: "گذاشتن بلاک"
+    desc: "بازیکن‌ها می‌توانند بلاک بگذارند و از فندک و بیلچه و ... استفاده کنند"
+  interact:
+    name: "اینترکت"
+    desc: "استفاده از صندوق، در، دکمه، اهرم، کوره و ..."
+  bucket:
+    name: "سطل"
+    desc: "بازیکن‌ها می‌توانند سطل را پر و خالی کنند"
+  explosions:
+    name: "تخریب انفجار"
+    desc: "تی‌ان‌تی و کریپر بلاک‌ها را خراب می‌کنند"
+  fire-spread:
+    name: "پخش آتش"
+    desc: "آتش پخش می‌شود و بلاک‌ها را می‌سوزاند"
+  liquid-flow:
+    name: "جریان مایعات"
+    desc: "آب و لاوا جاری می‌شوند"
+  leaves-decay:
+    name: "ریختن برگ‌ها"
+    desc: "برگ‌های بدون تنه از بین می‌روند"
+  crop-growth:
+    name: "رشد گیاهان"
+    desc: "محصولات، نهال‌ها و گیاهان رشد می‌کنند"
+  pvp:
+    name: "پی‌وی‌پی"
+    desc: "بازیکن‌ها می‌توانند به هم آسیب بزنند"
+  damage:
+    name: "دمیج"
+    desc: "بازیکن‌ها آسیب می‌بینند (خاموش یعنی ضدضربه)"
+  fall-damage:
+    name: "دمیج سقوط"
+    desc: "بازیکن‌ها با افتادن آسیب می‌بینند"
+  void-rescue:
+    name: "نجات از ووید"
+    desc: "افتادن در ووید، بازیکن را به اسپاون ورلد می‌برد"
+  hunger:
+    name: "گرسنگی"
+    desc: "بازیکن‌ها گرسنه می‌شوند"
+  drop-items:
+    name: "انداختن آیتم"
+    desc: "بازیکن‌ها می‌توانند آیتم بیندازند"
+  pickup-items:
+    name: "برداشتن آیتم"
+    desc: "بازیکن‌ها می‌توانند آیتم بردارند"
+  fly:
+    name: "پرواز"
+    desc: "بازیکن‌های سروایوال می‌توانند پرواز کنند"
+  keep-inventory:
+    name: "حفظ اینونتوری"
+    desc: "بعد از مرگ آیتم‌ها از بین نمی‌روند"
+  keep-xp:
+    name: "حفظ XP"
+    desc: "بعد از مرگ XP از بین نمی‌رود"
+  chat:
+    name: "چت"
+    desc: "بازیکن‌ها می‌توانند چت کنند"
+  world-chat:
+    name: "چت مخصوص ورلد"
+    desc: "چت فقط به بازیکن‌های همین ورلد می‌رسد"
+  gamemode:
+    name: "گیم‌مود اجباری"
+    desc: "همه بازیکن‌های این ورلد این گیم‌مود را می‌گیرند"
+  difficulty:
+    name: "سختی"
+    desc: "درجه سختی ورلد"
+  time:
+    name: "قفل تایم"
+    desc: "زمان روز ثابت می‌ماند"
+  locked:
+    name: "قفل"
+    desc: "بازیکن‌ها نمی‌توانند وارد این ورلد شوند"
+  max-players:
+    name: "حداکثر بازیکن"
+    desc: "بیشترین تعداد بازیکن هم‌زمان (0 یعنی نامحدود)"
+  border:
+    name: "مرز"
+    desc: "بازیکن‌ها بیشتر از این فاصله از اسپاون ورلد دور نمی‌شوند (0 یعنی بدون مرز)"
+  welcome-title:
+    name: "تایتل خوش‌آمد"
+    desc: "موقع ورود نمایش داده می‌شود. {player} و {world} و {online} کار می‌کنند"
+  welcome-subtitle:
+    name: "زیرتایتل خوش‌آمد"
+    desc: "زیر تایتل نمایش داده می‌شود"
+  welcome-message:
+    name: "پیام خوش‌آمد"
+    desc: "پیام چت موقع ورود. برای خط جدید بنویسید \\n"
+  blocked-commands:
+    name: "دستورهای ممنوع"
+    desc: "دستورهایی که اینجا کار نمی‌کنند، مثلا fly, tpa, home"
+
+server:
+  always-spawn:
+    name: "همیشه اسپاون"
+    desc: "بازیکن‌ها در هر ورود به اسپاون سرور بروند"
+  respawn-at-spawn:
+    name: "ریسپاون در اسپاون"
+    desc: "بعد از مرگ در اسپاون سرور زنده شوند"
+  spawn-command:
+    name: "دستور /spawn"
+    desc: "بازیکن‌ها با /spawn به اسپاون سرور بروند"
+  join-message:
+    name: "پیام ورود"
+    desc: "نمایش پیام وارد شدن بازیکن"
+  quit-message:
+    name: "پیام خروج"
+    desc: "نمایش پیام خارج شدن بازیکن"
+
+deny:
+  break: "§cاینجا نمی‌توانید بلاک بکنید."
+  place: "§cاینجا نمی‌توانید بسازید."
+  interact: "§cاینجا نمی‌توانید از این استفاده کنید."
+  bucket: "§cاینجا نمی‌توانید از سطل استفاده کنید."
+  drop-items: "§cاینجا نمی‌توانید آیتم بیندازید."
+  pvp: "§cپی‌وی‌پی در این ورلد خاموش است."
+  gamemode: "§cگیم‌مود در این ورلد قفل است."
+  border: "§cبه مرز ورلد رسیدید ({radius} بلاک)."
+  void-rescue: "§eاز ووید نجات پیدا کردید!"
+  chat: "{prefix}§cچت در این ورلد بسته است."
+  command: "{prefix}§cدستور §e/{command} §cدر این ورلد ممنوع است."
+  locked: "{prefix}§cورلد §e{world} §cقفل است."
+  full: "{prefix}§cورلد §e{world} §cپر است ({max} بازیکن)."
+
+spawn:
+  disabled: "{prefix}§cدستور /spawn در این سرور خاموش است."
+  teleported: "{prefix}§aبه اسپاون منتقل شدید."
+  always-on: "{prefix}§aهمیشه اسپاون §fروشن §aشد: بازیکن‌ها در هر ورود به اسپاون سرور می‌روند."
+  always-off: "{prefix}§7همیشه اسپاون §fخاموش §7شد."
+  status: "{prefix}§7همیشه اسپاون: {state} §8| §7اسپاون: §f{spawn}"
+  default-spawn: "اسپاون ورلد پیش‌فرض"
+  set: "{prefix}§aاسپاون سرور روی §f{spawn} §aتنظیم شد."
+  world-set: "{prefix}§aاسپاون §b{world} §aروی §f{x}, {y}, {z} §aتنظیم شد."
+  cleared: "{prefix}§7اسپاون سرور دوباره اسپاون ورلد پیش‌فرض است."
+
+world:
+  not-found: "{prefix}§cورلدی به اسم §e{world} §cوجود ندارد."
+  invalid-name: "{prefix}§cاسم ورلد فقط می‌تواند حروف انگلیسی، عدد، _ و - باشد (حداکثر 32)."
+  already-exists: "{prefix}§cورلد §e{world} §cاز قبل وجود دارد."
+  unknown-generator: "{prefix}§cژنراتور §e{generator} §cوجود ندارد. موجودها: §f{list}"
+  create-failed: "{prefix}§cساخت §e{world} §cانجام نشد. کنسول را ببینید."
+  created: "{prefix}§aورلد §b{world} §aساخته شد (§f{generator}§a)."
+  already-loaded: "{prefix}§e{world} §7از قبل لود است."
+  loaded: "{prefix}§aورلد §b{world} §aلود شد."
+  load-failed: "{prefix}§cلود §e{world} §cانجام نشد. کنسول را ببینید."
+  not-loaded: "{prefix}§e{world} §7لود نیست."
+  cannot-unload-default: "{prefix}§cورلد پیش‌فرض را نمی‌شود آنلود کرد."
+  unloaded: "{prefix}§aورلد §b{world} §aآنلود شد."
+  unload-failed: "{prefix}§cآنلود §e{world} §cانجام نشد."
+  teleported: "{prefix}§f{player} §aبه §b{world} §aمنتقل شد."
+
+list:
+  header: "§8------ §bورلدها §8------"
+  loaded: "§8» §a{world} §8(§f{players} §7آنلاین§8)"
+  unloaded: "§8» §7{world} §8(لود نیست)"
+
+builder:
+  "on": "{prefix}§aحالت بیلدر روشن شد: §7قوانین ورلد روی شما اجرا نمی‌شود."
+  "off": "{prefix}§7حالت بیلدر خاموش شد: قوانین ورلد دوباره روی شما اجرا می‌شود."
+
+lang:
+  disabled: "{prefix}§cتغییر زبان در این سرور خاموش است."
+  unknown: "{prefix}§cچنین زبانی نیست. موجودها: §f{list}"
+  changed: "{prefix}§aزبان شما فارسی شد."
+
+ui:
+  back: "برگشت"
+  close: "بستن"
+  next-page: "صفحه بعد"
+  previous-page: "صفحه قبل"
+  page: "§7صفحه §f{page} §7از §f{pages}"
+  confirm:
+    title: "مطمئن هستید؟"
+    "yes": "بله"
+    "no": "لغو"
+  main:
+    title: "WorldControl"
+    content: "§7سلام §f{player}\n§7شما در §b{world} §7هستید.\n\n§8» §7ورلدهای لود شده: §f{worlds}\n§8» §7بازیکن‌های آنلاین: §f{online}\n§8» §7همیشه اسپاون: {alwaysspawn}\n§8» §7حالت بیلدر: {builder}"
+    this-world: "همین ورلد"
+    worlds: "همه ورلدها"
+    worlds-sub: "{count} ورلد لود است"
+    defaults: "قوانین پیش‌فرض"
+    defaults-sub: "برای همه ورلدها"
+    server: "سرور و اسپاون"
+    server-sub: "همیشه اسپاون، دستور /spawn و پیام‌ها"
+    manage: "مدیریت ورلدها"
+    manage-sub: "ساختن، لود، آنلود"
+    builder: "حالت بیلدر"
+    language: "زبان"
+  language:
+    title: "زبان"
+    content: "§7زبان فعلی: §f{language}"
+    current: "§aزبان فعلی"
+  list:
+    title: "ورلدها"
+    content: "§7یک ورلد را برای تغییر قوانینش انتخاب کنید."
+    players: "§f{count} §7آنلاین"
+    badge-unloaded: "§7لود نیست"
+    badge-locked: "§cقفل"
+    badge-custom: "§6{count} تغییر"
+    badge-default: "§7قوانین پیش‌فرض"
+  world:
+    content: "§8» §7وضعیت: {status}\n§8» §7گیم‌مود: §f{gamemode}\n§8» §7تایم: §f{time}\n§8» §7سختی: §f{difficulty}\n§8» §7پی‌وی‌پی: {pvp}\n§8» §7ساخت‌وساز: {build}\n§8» §7قفل: {locked}\n§8» §7قوانین تغییر کرده: §f{custom}"
+    not-loaded: "§cلود نیست"
+    loaded: "§aلود است §8(§f{count} §7آنلاین§8)"
+    category-changed: "§6{count} تغییر"
+    teleport: "تلپورت"
+    teleport-sub: "رفتن به اسپاون این ورلد"
+    set-spawn: "تنظیم اسپاون ورلد"
+    set-spawn-sub: "همین جایی که ایستاده‌اید"
+    reset: "ریست قوانین"
+    reset-sub: "برگشت به قوانین پیش‌فرض"
+    reset-confirm: "§7همه تغییرات قوانین §b{world} §7حذف شود؟\n§7این ورلد دوباره از قوانین پیش‌فرض پیروی می‌کند."
+    load: "لود ورلد"
+    load-sub: "بارگذاری در حافظه"
+    unload: "آنلود ورلد"
+    unload-sub: "بازیکن‌های داخلش به ورلد پیش‌فرض می‌روند"
+    unload-confirm: "§7ورلد §b{world} §7آنلود شود؟\n§7بازیکن‌های داخلش به ورلد پیش‌فرض فرستاده می‌شوند."
+  defaults:
+    title: "قوانین پیش‌فرض"
+    content: "§7این قوانین روی همه ورلدهایی اجرا می‌شود که خودشان آن را تغییر نداده‌اند.\n§7مثلا اگر تایم را اینجا قفل کنید، تایم کل سرور قفل می‌شود."
+  form:
+    intro-defaults: "§7این قوانین روی همه ورلدهایی اجرا می‌شود که خودشان تغییرش نداده‌اند."
+    intro-world: "§7تغییرات اینجا فقط روی §b{world} §7اجرا می‌شود.\n§6* §7یعنی برای این ورلد تغییر کرده"
+    invalid: "{prefix}§cمقدار §e{rule} §cدرست نبود و تغییر نکرد."
+    saved: "{prefix}§f{count} §aتغییر برای §b{target} §aذخیره شد."
+    no-changes: "{prefix}§7چیزی تغییر نکرد."
+    time-custom: "دلخواه (پایین)"
+    time-custom-input: "§7تایم دلخواه به تیک (فقط با گزینه دلخواه)"
+    hint-number: "0 = خاموش"
+    hint-text: "خالی = هیچ"
+    hint-list: "fly, tpa, home"
+  server:
+    title: "سرور و اسپاون"
+    content: "§8» §7اسپاون سرور: §f{spawn}\n§8» §7همیشه اسپاون: {always}\n§8» §7ریسپاون در اسپاون: {respawn}\n§8» §7دستور /spawn: {command}\n§8» §7پیام ورود: {join}\n§8» §7پیام خروج: {quit}"
+    settings: "تنظیمات"
+    settings-sub: "همیشه اسپاون، دستور /spawn و پیام‌ها"
+    set-spawn: "تنظیم اسپاون سرور"
+    set-spawn-sub: "همین جایی که ایستاده‌اید"
+    teleport: "رفتن به اسپاون"
+    teleport-sub: "تلپورت به اسپاون سرور"
+    clear-spawn: "حذف اسپاون سرور"
+    clear-spawn-sub: "استفاده از اسپاون ورلد پیش‌فرض"
+    clear-spawn-confirm: "§7اسپاون سرور حذف شود؟\n§7به جایش اسپاون ورلد پیش‌فرض استفاده می‌شود."
+  manage:
+    title: "مدیریت ورلدها"
+    content: "§8» §7لود شده: §f{loaded}\n§8» §7لود نشده: §f{unloaded}"
+    create: "ساخت ورلد"
+    create-sub: "معمولی، فلت، نذر و ..."
+    load: "لود ورلد"
+    load-sub: "{count} ورلد لود نیست"
+    unload: "آنلود ورلد"
+    unload-sub: "خالی کردن حافظه"
+    load-pick: "§7کدام ورلد لود شود؟"
+    unload-pick: "§7کدام ورلد آنلود شود؟"
+    create-intro: "§7ساخت ورلد چند ثانیه طول می‌کشد."
+    create-name: "اسم ورلد (انگلیسی)"
+    create-generator: "ژنراتور"
+    create-seed: "سید"
+    create-seed-hint: "خالی = تصادفی"
+    create-teleport: "بعد از ساخت به آنجا بروم"

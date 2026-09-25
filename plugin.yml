@@ -1,0 +1,45 @@
+name: WorldControl
+main: ApexMine\WorldControl\WorldControl
+version: 1.0.0
+api: ["5.0.0"]
+author: ApexMine
+description: Per-world rules, time lock, forced gamemode, always-spawn and world management with a clean form UI (English & Persian)
+website: https://github.com/ApexMine/WorldControl
+
+permissions:
+  worldcontrol.command:
+    description: Use /worldcontrol at all. Players without worldcontrol.admin only get the language picker.
+    default: true
+  worldcontrol.admin:
+    description: Full access to the WorldControl panel and every admin subcommand
+    default: op
+  worldcontrol.builder:
+    description: Toggle builder mode (/wc builder), which ignores every world rule until turned off
+    default: op
+  worldcontrol.spawn:
+    description: Use /spawn (when spawn-command is enabled in the server settings)
+    default: true
+  worldcontrol.bypass.all:
+    description: Ignore every world rule below, all the time
+    default: false
+  worldcontrol.bypass.build:
+    description: Ignore break / place / interact / bucket / drop / pickup rules
+    default: false
+  worldcontrol.bypass.combat:
+    description: Ignore the pvp and damage rules (you can still be hurt, but also hit others)
+    default: false
+  worldcontrol.bypass.gamemode:
+    description: Keep your own gamemode in worlds with a forced gamemode
+    default: false
+  worldcontrol.bypass.commands:
+    description: Use commands that are blocked in a world
+    default: false
+  worldcontrol.bypass.chat:
+    description: Chat in worlds where chat is disabled
+    default: false
+  worldcontrol.bypass.border:
+    description: Walk past a world's border
+    default: false
+  worldcontrol.bypass.enter:
+    description: Enter locked or full worlds
+    default: false

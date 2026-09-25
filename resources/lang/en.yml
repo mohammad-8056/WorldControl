@@ -1,0 +1,386 @@
+# WorldControl - English
+# {placeholders} are filled in by the plugin; keep them. {prefix} is the prefix below.
+# Keys missing from this file fall back to the plugin's built-in copy.
+
+language:
+  name: "English"
+
+prefix: "§8[§bWorld§3Control§8]§r "
+
+general:
+  players-only: "{prefix}§cThis can only be used in game."
+  no-permission: "{prefix}§cYou don't have permission to do that."
+  player-help: "{prefix}§7Use §e/wc lang §7to change your language."
+  unknown-subcommand: "{prefix}§cUnknown subcommand §e{sub}§c. See §e/wc help§c."
+  usage: "{prefix}§cUsage: {usage}"
+  defaults-name: "Default rules"
+  player-not-found: "{prefix}§cPlayer §e{player} §cis not online."
+  reloaded: "{prefix}§aConfig, languages, worlds.yml and server.yml reloaded."
+
+help:
+  header: "§8------ §bWorld§3Control §8------"
+  line: "§8» {usage}"
+  footer: "§7World: a world name, §fhere§7, or §fdefault §7for every world."
+  help: "§e/wc help §8- §7this list"
+  ui: "§e/wc §8- §7open the panel"
+  world: "§e/wc world [world] §8- §7open a world's panel"
+  info: "§e/wc info [world] §8- §7show a world's rules"
+  set: "§e/wc set <world> <rule> <value> §8- §7change a rule"
+  unset: "§e/wc unset <world> <rule> §8- §7back to the default"
+  reset: "§e/wc reset <world> §8- §7drop all of a world's changes"
+  time: "§e/wc time <world> <day|noon|night|0-23999|off> §8- §7lock the time"
+  gamemode: "§e/wc gamemode <world> <survival|creative|adventure|spectator|off> §8- §7force a gamemode"
+  rules: "§e/wc rules §8- §7every rule and its values"
+  alwaysspawn: "§e/wc alwaysspawn <on|off|set|status> §8- §7spawn on every join"
+  setspawn: "§e/wc setspawn §8- §7set the server spawn here"
+  setworldspawn: "§e/wc setworldspawn §8- §7set this world's spawn here"
+  tp: "§e/wc tp <world> [player] §8- §7teleport to a world"
+  list: "§e/wc list §8- §7all worlds"
+  create: "§e/wc create <name> [generator] [seed] §8- §7create a world"
+  load: "§e/wc load <world> §8- §7load a world"
+  unload: "§e/wc unload <world> §8- §7unload a world"
+  builder: "§e/wc builder §8- §7ignore every rule while building"
+  lang: "§e/wc lang [en|fa] §8- §7change your language"
+  reload: "§e/wc reload §8- §7reload all files"
+
+rules:
+  header: "§8------ §bRules §8------"
+  category: "§3§l{category}"
+  line: "§8» §e{key} §8- §f{name} §8({values})"
+  values:
+    bool: "on / off"
+    gamemode: "survival, creative, adventure, spectator, off"
+    difficulty: "peaceful, easy, normal, hard, off"
+    time: "sunrise, day, noon, sunset, night, midnight, 0-23999, off"
+    number: "a number, 0 = off"
+    text: "any text, none = empty"
+    list: "comma separated, none = empty"
+
+info:
+  header: "§8------ §b{target} §8------"
+  line: "§8» §7{name}: §f{value}"
+  line-changed: "§8» §6* §7{name}: §f{value}"
+  footer: "§6* §7= changed for this world, the rest comes from the default rules."
+
+set:
+  unknown-rule: "{prefix}§cUnknown rule. See §e{list}§c."
+  invalid-value: "{prefix}§c'{value}' is not a valid value for §e{rule}§c. Use: §f{values}"
+  changed: "{prefix}§a{rule} §7is now §f{value} §7in §b{target}§7."
+  unset: "{prefix}§a{rule} §7in §b{world} §7follows the default rules again."
+  reset: "{prefix}§b{world} §7now follows the default rules again."
+
+value:
+  "on": "§aOn"
+  "off": "§cOff"
+  not-forced: "Not forced"
+  time-free: "Not locked"
+  time-ticks: "{ticks}"
+  time-preset: "{name} ({ticks})"
+  unlimited: "Unlimited"
+  blocks: "{count} blocks"
+  empty: "-"
+
+gamemode:
+  survival: "Survival"
+  creative: "Creative"
+  adventure: "Adventure"
+  spectator: "Spectator"
+
+difficulty:
+  peaceful: "Peaceful"
+  easy: "Easy"
+  normal: "Normal"
+  hard: "Hard"
+
+time:
+  sunrise: "Sunrise"
+  day: "Day"
+  noon: "Noon"
+  sunset: "Sunset"
+  night: "Night"
+  midnight: "Midnight"
+
+category:
+  build:
+    name: "Building & world"
+    desc: "Break, place, interact, fire, liquids"
+  combat:
+    name: "Combat & damage"
+    desc: "PvP, damage, fall damage, void"
+  player:
+    name: "Players"
+    desc: "Hunger, items, flying, chat"
+  mode:
+    name: "Gamemode & time"
+    desc: "Forced gamemode, difficulty, time lock"
+  access:
+    name: "Access & border"
+    desc: "Lock, player limit, world border"
+  messages:
+    name: "Messages & commands"
+    desc: "Welcome title, blocked commands"
+
+rule:
+  break:
+    name: "Block breaking"
+    desc: "Players can break blocks"
+  place:
+    name: "Block placing"
+    desc: "Players can place blocks and use tools like flint and steel or hoes"
+  interact:
+    name: "Interacting"
+    desc: "Players can use chests, doors, buttons, levers, furnaces ..."
+  bucket:
+    name: "Buckets"
+    desc: "Players can fill and empty buckets"
+  explosions:
+    name: "Explosion damage"
+    desc: "TNT and creepers break blocks"
+  fire-spread:
+    name: "Fire spread"
+    desc: "Fire spreads and burns blocks"
+  liquid-flow:
+    name: "Liquid flow"
+    desc: "Water and lava flow"
+  leaves-decay:
+    name: "Leaf decay"
+    desc: "Leaves disappear without a log"
+  crop-growth:
+    name: "Crop growth"
+    desc: "Crops, saplings and plants grow"
+  pvp:
+    name: "PvP"
+    desc: "Players can hurt each other"
+  damage:
+    name: "Damage"
+    desc: "Players can take damage at all (off = invincible)"
+  fall-damage:
+    name: "Fall damage"
+    desc: "Players get hurt when falling"
+  void-rescue:
+    name: "Void rescue"
+    desc: "Falling into the void teleports to the world spawn"
+  hunger:
+    name: "Hunger"
+    desc: "Players get hungry"
+  drop-items:
+    name: "Dropping items"
+    desc: "Players can drop items"
+  pickup-items:
+    name: "Picking up items"
+    desc: "Players can pick up items"
+  fly:
+    name: "Flying"
+    desc: "Survival players can fly"
+  keep-inventory:
+    name: "Keep inventory"
+    desc: "Players keep their items when they die"
+  keep-xp:
+    name: "Keep XP"
+    desc: "Players keep their XP when they die"
+  chat:
+    name: "Chat"
+    desc: "Players can chat"
+  world-chat:
+    name: "World-only chat"
+    desc: "Chat only reaches players in the same world"
+  gamemode:
+    name: "Forced gamemode"
+    desc: "Everyone in this world gets this gamemode"
+  difficulty:
+    name: "Difficulty"
+    desc: "The world's difficulty"
+  time:
+    name: "Time lock"
+    desc: "Keep the time of day fixed"
+  locked:
+    name: "Locked"
+    desc: "Players can't enter this world"
+  max-players:
+    name: "Player limit"
+    desc: "Most players in this world at once (0 = no limit)"
+  border:
+    name: "Border"
+    desc: "Players can't go further than this from the world spawn (0 = no border)"
+  welcome-title:
+    name: "Welcome title"
+    desc: "Title shown on entering. {player}, {world}, {online} work"
+  welcome-subtitle:
+    name: "Welcome subtitle"
+    desc: "Shown under the title"
+  welcome-message:
+    name: "Welcome message"
+    desc: "Chat message on entering. \\n = new line"
+  blocked-commands:
+    name: "Blocked commands"
+    desc: "Commands players can't use here, e.g. fly, tpa, home"
+
+server:
+  always-spawn:
+    name: "Always spawn"
+    desc: "Teleport players to the server spawn every time they join"
+  respawn-at-spawn:
+    name: "Respawn at spawn"
+    desc: "After dying, respawn at the server spawn"
+  spawn-command:
+    name: "/spawn command"
+    desc: "Players can use /spawn to go to the server spawn"
+  join-message:
+    name: "Join messages"
+    desc: "Show 'Player joined the game'"
+  quit-message:
+    name: "Quit messages"
+    desc: "Show 'Player left the game'"
+
+deny:
+  break: "§cYou can't break blocks here."
+  place: "§cYou can't build here."
+  interact: "§cYou can't use that here."
+  bucket: "§cYou can't use buckets here."
+  drop-items: "§cYou can't drop items here."
+  pvp: "§cPvP is disabled in this world."
+  gamemode: "§cThe gamemode is locked in this world."
+  border: "§cYou reached the world border ({radius} blocks)."
+  void-rescue: "§eSaved from the void!"
+  chat: "{prefix}§cChat is disabled in this world."
+  command: "{prefix}§cYou can't use §e/{command} §cin this world."
+  locked: "{prefix}§cThe world §e{world} §cis locked."
+  full: "{prefix}§cThe world §e{world} §cis full ({max} players)."
+
+spawn:
+  disabled: "{prefix}§c/spawn is disabled on this server."
+  teleported: "{prefix}§aTeleported to spawn."
+  always-on: "{prefix}§aAlways-spawn is now §fon§a: players go to the server spawn on every join."
+  always-off: "{prefix}§7Always-spawn is now §foff§7."
+  status: "{prefix}§7Always-spawn: {state}§7, spawn: §f{spawn}"
+  default-spawn: "spawn of the default world"
+  set: "{prefix}§aServer spawn set to §f{spawn}§a."
+  world-set: "{prefix}§aSpawn of §b{world} §aset to §f{x}, {y}, {z}§a."
+  cleared: "{prefix}§7The server spawn is the default world's spawn again."
+
+world:
+  not-found: "{prefix}§cThere is no world called §e{world}§c."
+  invalid-name: "{prefix}§cWorld names can only use letters, numbers, _ and - (up to 32)."
+  already-exists: "{prefix}§cThe world §e{world} §calready exists."
+  unknown-generator: "{prefix}§cUnknown generator §e{generator}§c. Available: §f{list}"
+  create-failed: "{prefix}§cCould not create §e{world}§c. See the console."
+  created: "{prefix}§aWorld §b{world} §acreated (§f{generator}§a)."
+  already-loaded: "{prefix}§e{world} §7is already loaded."
+  loaded: "{prefix}§aWorld §b{world} §aloaded."
+  load-failed: "{prefix}§cCould not load §e{world}§c. See the console."
+  not-loaded: "{prefix}§e{world} §7is not loaded."
+  cannot-unload-default: "{prefix}§cThe default world can't be unloaded."
+  unloaded: "{prefix}§aWorld §b{world} §aunloaded."
+  unload-failed: "{prefix}§cCould not unload §e{world}§c."
+  teleported: "{prefix}§aTeleported §f{player} §ato §b{world}§a."
+
+list:
+  header: "§8------ §bWorlds §8------"
+  loaded: "§8» §a{world} §8(§f{players} §7online§8)"
+  unloaded: "§8» §7{world} §8(not loaded)"
+
+builder:
+  "on": "{prefix}§aBuilder mode on: §7world rules don't apply to you."
+  "off": "{prefix}§7Builder mode off: world rules apply to you again."
+
+lang:
+  disabled: "{prefix}§cChanging the language is disabled on this server."
+  unknown: "{prefix}§cUnknown language. Available: §f{list}"
+  changed: "{prefix}§aLanguage set to English."
+
+ui:
+  back: "Back"
+  close: "Close"
+  next-page: "Next page"
+  previous-page: "Previous page"
+  page: "§7Page §f{page}§7/§f{pages}"
+  confirm:
+    title: "Are you sure?"
+    "yes": "Yes"
+    "no": "Cancel"
+  main:
+    title: "WorldControl"
+    content: "§7Hi §f{player}§7, you are in §b{world}§7.\n\n§8» §7Loaded worlds: §f{worlds}\n§8» §7Players online: §f{online}\n§8» §7Always-spawn: {alwaysspawn}\n§8» §7Builder mode: {builder}"
+    this-world: "This world"
+    worlds: "All worlds"
+    worlds-sub: "{count} loaded"
+    defaults: "Default rules"
+    defaults-sub: "For every world"
+    server: "Server & spawn"
+    server-sub: "Always-spawn, /spawn, messages"
+    manage: "Manage worlds"
+    manage-sub: "Create, load, unload"
+    builder: "Builder mode"
+    language: "Language"
+  language:
+    title: "Language"
+    content: "§7Current language: §f{language}"
+    current: "§aCurrent"
+  list:
+    title: "Worlds"
+    content: "§7Pick a world to edit its rules."
+    players: "§f{count} §7online"
+    badge-unloaded: "§7not loaded"
+    badge-locked: "§clocked"
+    badge-custom: "§6{count} changed"
+    badge-default: "§7default rules"
+  world:
+    content: "§8» §7Status: {status}\n§8» §7Gamemode: §f{gamemode}\n§8» §7Time: §f{time}\n§8» §7Difficulty: §f{difficulty}\n§8» §7PvP: {pvp}  §8| §7Building: {build}\n§8» §7Locked: {locked}\n§8» §7Changed rules: §f{custom}"
+    not-loaded: "§cnot loaded"
+    loaded: "§aloaded §8(§f{count} §7online§8)"
+    category-changed: "§6{count} changed"
+    teleport: "Teleport"
+    teleport-sub: "Go to this world's spawn"
+    set-spawn: "Set world spawn"
+    set-spawn-sub: "To where you stand"
+    reset: "Reset rules"
+    reset-sub: "Back to the default rules"
+    reset-confirm: "§7Remove every rule change of §b{world}§7?\n§7It will follow the default rules again."
+    load: "Load world"
+    load-sub: "Load it into memory"
+    unload: "Unload world"
+    unload-sub: "Players inside go to the default world"
+    unload-confirm: "§7Unload §b{world}§7?\n§7Players inside will be sent to the default world."
+  defaults:
+    title: "Default rules"
+    content: "§7These rules apply to every world that doesn't change them itself.\n§7Example: lock the time here to lock it on the whole server."
+  form:
+    intro-defaults: "§7These apply to every world that doesn't change them itself."
+    intro-world: "§7Changes here only apply to §b{world}§7.\n§6* §7= changed for this world"
+    invalid: "{prefix}§cInvalid value for §e{rule}§c, it was not changed."
+    saved: "{prefix}§aSaved §f{count} §achange(s) for §b{target}§a."
+    no-changes: "{prefix}§7Nothing changed."
+    time-custom: "Custom (below)"
+    time-custom-input: "§7Custom time in ticks (only with Custom)"
+    hint-number: "0 = off"
+    hint-text: "empty = nothing"
+    hint-list: "fly, tpa, home"
+  server:
+    title: "Server & spawn"
+    content: "§8» §7Server spawn: §f{spawn}\n§8» §7Always-spawn: {always}\n§8» §7Respawn at spawn: {respawn}\n§8» §7/spawn: {command}\n§8» §7Join / quit messages: {join} §8/ {quit}"
+    settings: "Settings"
+    settings-sub: "Always-spawn, /spawn, messages"
+    set-spawn: "Set server spawn"
+    set-spawn-sub: "To where you stand"
+    teleport: "Go to spawn"
+    teleport-sub: "Teleport to the server spawn"
+    clear-spawn: "Remove server spawn"
+    clear-spawn-sub: "Use the default world's spawn"
+    clear-spawn-confirm: "§7Remove the server spawn?\n§7The default world's spawn will be used instead."
+  manage:
+    title: "Manage worlds"
+    content: "§8» §7Loaded: §f{loaded}\n§8» §7Not loaded: §f{unloaded}"
+    create: "Create a world"
+    create-sub: "Normal, flat, nether ..."
+    load: "Load a world"
+    load-sub: "{count} not loaded"
+    unload: "Unload a world"
+    unload-sub: "Free memory"
+    load-pick: "§7Which world should be loaded?"
+    unload-pick: "§7Which world should be unloaded?"
+    create-intro: "§7Creating a world takes a few seconds."
+    create-name: "World name"
+    create-generator: "Generator"
+    create-seed: "Seed"
+    create-seed-hint: "empty = random"
+    create-teleport: "Teleport me there"

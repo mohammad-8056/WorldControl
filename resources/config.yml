@@ -1,0 +1,41 @@
+# WorldControl - config
+#
+# World rules live in worlds.yml and the server spawn / always-spawn in server.yml.
+# Both are easiest to change in game with /wc. This file only holds settings you
+# set once. After editing it, run /wc reload.
+
+# Language for players who haven't picked one with /wc lang.
+# Built in: en (English), fa (Persian / فارسی). To add another, copy
+# plugin_data/WorldControl/lang/en.yml to lang/<code>.yml and translate it.
+language: en
+
+# Language of messages shown in the console.
+console-language: en
+
+# Players whose game language is Persian (fa_IR) get Persian automatically,
+# English players get English, and so on - as long as they haven't picked
+# a language themselves.
+auto-detect-language: true
+
+# Let players pick their own language with /wc lang (and the language button).
+allow-player-language: true
+
+# Persian text is shaped and made right-to-left with libPersianText.
+# A long right-to-left line that the client wraps by itself reads bottom-to-top,
+# so lines longer than these many characters are split first. 0 = don't split.
+persian:
+  form-line-length: 40
+  chat-line-length: 0
+
+# How players are told that something is blocked (breaking, pvp ...):
+# actionbar, tip, chat or none.
+deny-message: actionbar
+
+# Extra names for /spawn. Remove "hub" if another plugin already uses it.
+spawn-aliases:
+  - lobby
+  - hub
+
+# Every this many seconds, locked times and difficulties are applied again,
+# in case another plugin or /time changed them.
+enforce-interval: 5
