@@ -191,8 +191,8 @@
 <div dir="ltr">
 
 ```php
-use ApexMine\WorldControl\WorldControl;
-use ApexMine\WorldControl\rule\Rule;
+use ApexGaming\WorldControl\WorldControl;
+use ApexGaming\WorldControl\rule\Rule;
 
 $wc = WorldControl::getInstance();
 $wc->rulesOf($player->getWorld())->allows(Rule::PVP);          // bool
@@ -261,4 +261,4 @@ build in protected worlds.
 ### License
 
 [MIT](LICENSE). Bundles [libPersianText](https://github.com/ApexMine/libPersianText) (MIT) under
-`src/ApexMine/WorldControl/libs/`.
+`src/ApexGaming/WorldControl/libs/`.
