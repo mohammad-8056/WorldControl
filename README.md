@@ -1,3 +1,5 @@
+<p align="center"><img src="icon.png" width="160" alt="WorldControl"></p>
+
 <div dir="rtl">
 
 # WorldControl

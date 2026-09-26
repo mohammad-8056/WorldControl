@@ -26,7 +26,7 @@ $phar->setSignatureAlgorithm(Phar::SHA256);
 $phar->startBuffering();
 
 $files = 0;
-foreach(["plugin.yml", "LICENSE"] as $file){
+foreach(["plugin.yml", "LICENSE", "icon.png"] as $file){
     $phar->addFile($root . "/" . $file, $file);
     $files++;
 }
